@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Kontakt — Kinga Chudzik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="../../assets/base.css">
+  <link rel="stylesheet" href="../../assets/b.css">
+  <link rel="stylesheet" href="../../assets/r2.css">
+  <link rel="stylesheet" href="../../assets/f.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-contact v-f v2">
+  <header class="topbar">
+    <a class="brand" href="../">Kinga Chudzik <span>Makeup Artist</span></a>
+    <nav class="site-nav" aria-label="Główna">
+      <a href="../">Work</a>
+      <a href="../sluby/">Śluby</a>
+      <a href="../kontakt/" aria-current="page">Kontakt</a>
+      <span class="lang" aria-label="Język"><b>PL</b><span>EN</span></span>
+    </nav>
+  </header>
+  <main>
+  <section class="contact">
+    <figure class="contact-photo">
+      <img src="../../img/portrait-800.webp" srcset="../../img/portrait-800.webp 800w, ../../img/portrait-1200.webp 1200w, ../../img/portrait-1600.webp 1600w, ../../img/portrait-2400.webp 2400w" sizes="(min-width: 760px) 50vw, 100vw" width="2400" height="1350" alt="Kinga Chudzik przy pracy">
+    </figure>
+    <div class="contact-body">
+      <h1>Kontakt</h1>
+      <p class="bio">Kinga Chudzik — makijażystka z Krakowa. Pracuję przy kampaniach beauty, sesjach editorialowych i z twórczyniami internetowymi. Wykonuję również makijaże ślubne.</p>
+      <dl class="clients">
+        <dt>Wybrani klienci</dt>
+        <dd>Marka 01 · Marka 02 · Magazyn 03 · Agencja 04 · Marka 05</dd>
+      </dl>
+      <form class="form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.form-note').hidden = false;">
+        <div class="field"><label for="f-name">Imię i nazwisko</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-type">Rodzaj zapytania</label>
+          <select id="f-type" name="typ">
+            <option value="kampania">Kampania / sesja</option>
+            <option value="slub">Ślub</option>
+            <option value="inne">Inne</option>
+          </select>
+        </div>
+        <div class="field field--date"><label for="f-date">Data ślubu</label><input id="f-date" name="date" type="date"></div>
+        <div class="field"><label for="f-msg">Wiadomość</label><textarea id="f-msg" name="message" rows="4" required></textarea></div>
+        <p class="consent">Wysyłając formularz, akceptujesz <span class="fake-link">politykę prywatności</span>.</p>
+        <button class="btn" type="submit">Wyślij zapytanie</button>
+        <p class="form-note" hidden>To tylko koncepcja — formularz jeszcze niczego nie wysyła.</p>
+      </form>
+      <ul class="direct">
+        <li><a href="https://www.instagram.com/kingachudzik.makeup/" rel="noopener">Instagram</a></li>
+        <li><a href="mailto:kontakt@kingachudzik.com">kontakt@kingachudzik.com</a></li>
+        <li>Kraków</li>
+      </ul>
+    </div>
+  </section>
+  <script>
+    { const typ = new URLSearchParams(location.search).get('typ'); const select = document.getElementById('f-type'); if (typ && select) select.value = typ; }
+  </script>
+  </main>
+  <footer class="site-footer">
+    <p>© 2026 Kinga Chudzik</p>
+    <ul>
+      <li><a href="https://www.instagram.com/kingachudzik.makeup/" rel="noopener">Instagram</a></li>
+      <li><a href="mailto:kontakt@kingachudzik.com">kontakt@kingachudzik.com</a></li>
+      <li><span class="fake-link">Polityka prywatności</span></li>
+    </ul>
+    <p class="note">Koncepcja F · zdjęcia zastępcze: Unsplash</p>
+  </footer>
+  <dialog class="lb" aria-label="Podgląd zdjęcia" tabindex="-1">
+    <img class="lb-img" alt="" draggable="false">
+    <button class="lb-close" type="button">Zamknij</button>
+    <button class="lb-prev" type="button" aria-label="Poprzednie zdjęcie">←</button>
+    <button class="lb-next" type="button" aria-label="Następne zdjęcie">→</button>
+    <p class="lb-count" aria-live="polite"></p>
+  </dialog>
+  <nav class="cswitch" aria-label="Przełącz koncepcję">
+    <a href="../../">Koncepcje</a>
+    <a href="../../d/kontakt/">D</a>
+    <a href="../../e/kontakt/">E</a>
+    <a href="../../f/kontakt/" aria-current="true">F</a>
+  </nav>
+  <script src="../../assets/lightbox.js" defer></script>
+  <script src="../../assets/reveal.js" defer></script>
+</body>
+</html>

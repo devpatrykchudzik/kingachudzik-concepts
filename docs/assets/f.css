@@ -1,0 +1,23 @@
+/* Koncepcja F — Mozaika: ścisła siatka jak w B; zdjęcie wiodące zajmuje cztery pola, reszta kampanii je otacza. */
+.v-f .camp { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; gap: var(--gap); }
+.v-f .camp-thumbs { display: contents; }
+
+.v-f .camp-lead { grid-column: span 2; grid-row: span 2; aspect-ratio: 4 / 5; }
+.v-f .camp--l .camp-lead { aspect-ratio: 3 / 2; }
+.v-f .camp.is-flip .camp-lead { grid-column: 3 / span 2; }
+.v-f .camp-lead a { position: relative; }
+.v-f .camp-lead img { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 50% 30%; }
+
+/* podpis wypełnia resztę ostatniego wiersza mozaiki */
+.v-f .camp-cap { order: 1; grid-column: span var(--cap-mosaic); }
+
+@media (hover: hover) {
+  .v-f .camp .ph { transition: opacity .45s ease .06s; }
+  .v-f .camp:has(.ph:hover) .ph:not(:hover) { opacity: .38; }
+}
+
+@media (max-width: 720px) {
+  .v-f .camp { grid-template-columns: 1fr 1fr; }
+  .v-f .camp-lead, .v-f .camp.is-flip .camp-lead { order: -2; grid-column: 1 / -1; grid-row: auto; }
+  .v-f .camp-cap { order: var(--cap-pair-order); grid-column: span var(--cap-pair); }
+}

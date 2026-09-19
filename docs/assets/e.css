@@ -1,0 +1,32 @@
+/* Koncepcja E — Podmiana: duże zdjęcie i miniatury obok; najechanie lub tapnięcie miniatury podmienia duże zdjęcie. */
+.v-e .camp { display: grid; gap: var(--gap); }
+.v-e .camp--p { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+.v-e .camp--p.is-flip { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+.v-e .camp--p.is-flip .camp-stage { order: 2; }
+
+.v-e .camp-stage { position: relative; width: 100%; max-height: calc(100dvh - var(--bar) - var(--pad)); aspect-ratio: var(--ratio); overflow: hidden; background: var(--ph-bg); }
+.v-e .camp--l .camp-stage { aspect-ratio: 16 / 9; }
+.v-e .camp-stage a { position: absolute; inset: 0; opacity: 0; pointer-events: none; cursor: zoom-in; transition: opacity .7s ease; }
+.v-e .camp-stage a.is-active { opacity: 1; pointer-events: auto; }
+.v-e .camp-stage img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+
+.v-e .camp-side { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-width: 0; padding-inline: clamp(8px, 3vw, 56px); }
+.v-e .camp-cap { justify-content: flex-start; }
+.v-e .camp-thumbs { display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: var(--gap); max-width: calc(var(--count) * 132px); }
+.v-e .camp--l .camp-side { flex-direction: row; align-items: end; padding-inline: 0; }
+.v-e .camp--l .camp-thumbs { grid-template-columns: repeat(var(--count), clamp(64px, 9vw, 150px)); }
+
+.v-e .thumb { padding: 0; border: 0; background: var(--ph-bg); opacity: .5; cursor: pointer; transition: opacity .4s ease; }
+.v-e .thumb:hover, .v-e .thumb.is-active { opacity: 1; }
+.v-e .thumb img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; }
+.v-e .camp--l .thumb img { aspect-ratio: 3 / 2; }
+
+@media (max-width: 720px) {
+  .v-e .camp--p, .v-e .camp--p.is-flip { grid-template-columns: 1fr; }
+  .v-e .camp--p.is-flip .camp-stage { order: 0; }
+  .v-e .camp-stage { max-height: none; }
+  .v-e .camp--p .camp-stage { aspect-ratio: 4 / 5; }
+  .v-e .camp--l .camp-stage { aspect-ratio: 3 / 2; }
+  .v-e .camp-side, .v-e .camp--l .camp-side { flex-direction: column-reverse; align-items: stretch; gap: 4px; padding-inline: 0; }
+  .v-e .camp-thumbs, .v-e .camp--l .camp-thumbs { grid-template-columns: repeat(5, 1fr); max-width: none; }
+}

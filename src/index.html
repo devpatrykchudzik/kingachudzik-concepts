@@ -32,42 +32,67 @@
     .c .logo { font: 400 56px/.92 "Instrument Serif", serif; text-align: left; }
     .c .logo em { display: block; }
     .c .logo small { display: block; margin-top: 18px; font: 400 10px/1 "Instrument Sans", sans-serif; letter-spacing: .3em; text-transform: uppercase; opacity: .55; }
+    .round { margin: clamp(40px, 6vw, 72px) 0 0; font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: #777; }
+    .round + .grid { margin-top: 16px; }
+    .grid--small .card { min-height: 0; }
+    .grid--small .card h2 { margin-top: 28px; }
+    .demo { display: grid; gap: 4px; width: 100%; max-width: 250px; margin-inline: auto; padding: 0 !important; aspect-ratio: 5 / 3; }
+    .demo i { background: #e4e0da; }
+    .demo i:first-child { background: #cfc8be; }
+    .demo-d { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
+    .demo-d i:first-child { grid-row: span 2; }
+    .demo-d i:nth-child(2) { background: none; }
+    .demo-e { grid-template-columns: 5fr 1fr 1fr 1fr 1fr; grid-template-rows: 3fr 1fr; }
+    .demo-e i:first-child { grid-column: 1; grid-row: 1 / span 2; }
+    .demo-e i:nth-child(n + 2) { grid-row: 2; }
+    .demo-f { grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 1fr; }
+    .demo-f i:first-child { grid-column: span 2; grid-row: span 2; }
+    .demo-f::after { content: ""; }
     .notes { margin: clamp(32px, 5vw, 56px) 0 0; padding: 0; max-width: 70ch; color: #555; font-size: 14px; list-style: none; }
     .notes li { padding: 10px 0; border-top: 1px solid #e6e6e6; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Kinga Chudzik — trzy koncepcje strony</h1>
-    <p class="lead">Ten sam poziom minimalizmu, trzy różne charaktery. Każda koncepcja ma trzy podstrony: Work, Śluby i Kontakt. Między koncepcjami przełączysz się pigułką A · B · C w prawym dolnym rogu — zostajesz wtedy na tej samej podstronie, więc łatwo je porównać.</p>
+    <h1>Kinga Chudzik — koncepcje strony</h1>
+    <p class="lead">Runda 2 łączy wybrane elementy: jasne tło, czcionkę i zagęszczenie z koncepcji B oraz pomysł z C — duże zdjęcie, a obok mniejsze z tej samej kampanii. Trzy warianty różnią się układem bloku kampanii i efektem. Między wariantami przełączysz się pigułką D · E · F w prawym dolnym rogu.</p>
 
+    <h2 class="round">Runda 2 — kampanie</h2>
     <div class="grid">
-      <a class="card a" href="a/">
-        <span class="tag">Koncepcja A</span>
-        <div class="logo">Kinga Chudzik<small>Makeup Artist — Kraków</small></div>
-        <h2>Editorial</h2>
-        <p>Ciepły, papierowy odcień i szeryfowy logotyp na środku. Zdjęcia ułożone asymetrycznie, z dużą ilością powietrza — jak rozkładówka magazynu.</p>
+      <a class="card b" href="d/">
+        <span class="tag">Koncepcja D</span>
+        <div class="logo demo demo-d"><i></i><i></i><i></i><i></i><i></i></div>
+        <h2>Lead</h2>
+        <p>Duże zdjęcie przykleja się do ekranu, a obok przewija się kolumna mniejszych z tej samej kampanii. Strony na przemian. Najspokojniejszy wariant.</p>
         <span class="open">Otwórz →</span>
       </a>
-      <a class="card b" href="b/">
-        <span class="tag">Koncepcja B</span>
-        <div class="logo">Kinga Chudzik<small>Makeup Artist</small></div>
-        <h2>Atelier</h2>
-        <p>Czysta biel, jeden bezszeryfowy krój i ścisła siatka z wąskimi odstępami. Najbliżej stron, które podałeś jako wzór; zdjęcia wypełniają cały ekran.</p>
+      <a class="card b" href="e/">
+        <span class="tag">Koncepcja E</span>
+        <div class="logo demo demo-e"><i></i><i></i><i></i><i></i><i></i></div>
+        <h2>Podmiana</h2>
+        <p>Duże zdjęcie i rząd miniatur. Najechanie lub tapnięcie miniatury podmienia duże zdjęcie z płynnym przenikaniem. Najbardziej zwarty — kampania mieści się na jednym ekranie.</p>
         <span class="open">Otwórz →</span>
       </a>
-      <a class="card c" href="c/">
-        <span class="tag">Koncepcja C</span>
-        <div class="logo">Kinga <em>Chudzik</em><small>Makeup Artist — Kraków</small></div>
-        <h2>Noir</h2>
-        <p>Głęboka czerń, stały panel boczny z nazwiskiem i nawigacją. Zdjęcia pojawiają się pojedynczo, na przemian z lewej i prawej — jak kadry filmu.</p>
+      <a class="card b" href="f/">
+        <span class="tag">Koncepcja F</span>
+        <div class="logo demo demo-f"><i></i><i></i><i></i><i></i></div>
+        <h2>Mozaika</h2>
+        <p>Ścisła siatka jak w B: zdjęcie wiodące zajmuje cztery pola, reszta kampanii je otacza, podpis domyka mozaikę. Po najechaniu pozostałe zdjęcia przygasają.</p>
         <span class="open">Otwórz →</span>
       </a>
     </div>
 
+    <h2 class="round">Runda 1 — kierunki wyjściowe</h2>
+    <div class="grid grid--small">
+      <a class="card a" href="a/"><span class="tag">Koncepcja A</span><h2>Editorial</h2><p>Ciepły papier, szeryfowy logotyp, asymetria.</p></a>
+      <a class="card b" href="b/"><span class="tag">Koncepcja B</span><h2>Atelier</h2><p>Czysta biel, jeden krój, ścisła siatka.</p></a>
+      <a class="card c" href="c/"><span class="tag">Koncepcja C</span><h2>Noir</h2><p>Czerń, panel boczny, zdjęcia pojedynczo.</p></a>
+    </div>
+
     <ul class="notes">
       <li><strong>Zdjęcia są zastępcze</strong> (Unsplash) — nie są pracami Kingi. Docelowo zastąpią je jej zdjęcia.</li>
-      <li><strong>Układ robi się sam.</strong> Strony powstają z jednej uporządkowanej listy zdjęć: poziome kadry dostają pełną szerokość, pionowe są grupowane. Tak samo będzie działać docelowa strona — w panelu ustawia się tylko kolejność.</li>
+      <li><strong>Układ robi się sam.</strong> Kampania to folder ze zdjęciami — pierwsze jest wiodące. Pojedyncze zdjęcia między kampaniami łączą się w gęste wiersze jak w koncepcji B. Tak samo będzie działać docelowa strona: w panelu dodaje się kampanię, wrzuca zdjęcia i ustawia kolejność.</li>
+      <li><strong>Efekty:</strong> zdjęcia odsłaniają się przy przewijaniu, a kliknięta miniatura płynnie rozrasta się do pełnoekranowego podglądu i wraca na miejsce przy zamknięciu (w przeglądarkach bez View Transitions podgląd po prostu się otwiera).</li>
       <li><strong>Kliknij dowolne zdjęcie</strong>, żeby zobaczyć podgląd pełnoekranowy (strzałki, klawiatura, gest na telefonie).</li>
       <li>Teksty są przykładowe, formularz niczego nie wysyła, a wersja angielska powstanie na etapie wdrożenia.</li>
     </ul>

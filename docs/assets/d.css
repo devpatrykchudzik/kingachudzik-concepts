@@ -1,0 +1,24 @@
+/* Koncepcja D — Lead: zdjęcie wiodące przykleja się do ekranu, obok przewija się kolumna mniejszych z tej samej kampanii. */
+.v-d .camp { display: grid; gap: var(--gap); }
+.v-d .camp-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+.v-d .camp-cap { grid-column: span var(--cap-lead); }
+
+/* kampania pionowa: duże zdjęcie i kolumna obok, strony na przemian */
+.v-d .camp--p { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+.v-d .camp--p.is-flip .camp-lead { order: 2; }
+.v-d .camp--p .camp-lead { position: sticky; top: var(--bar); height: auto; }
+.v-d .camp--p .camp-lead img { height: auto; max-height: calc(100dvh - var(--bar) - var(--pad)); aspect-ratio: auto; }
+
+/* kampania pozioma: szeroki kadr, pod nim rząd mniejszych */
+.v-d .camp--l .camp-lead img { aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 35%; }
+.v-d .camp--l .camp-thumbs { grid-template-columns: repeat(var(--cols), 1fr); }
+
+@media (max-width: 720px) {
+  .v-d .camp--p { grid-template-columns: 1fr; }
+  .v-d .camp--p.is-flip .camp-lead { order: 0; }
+  .v-d .camp--p .camp-lead { position: static; }
+  .v-d .camp--p .camp-lead img { max-height: none; aspect-ratio: 4 / 5; }
+  .v-d .camp--l .camp-lead img { aspect-ratio: 3 / 2; }
+  .v-d .camp--l .camp-thumbs { grid-template-columns: 1fr 1fr; }
+  .v-d .camp--l .camp-cap { grid-column: span var(--cap-pair); }
+}
