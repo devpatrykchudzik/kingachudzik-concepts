@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Kinga Chudzik — koncepcje strony</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #fafafa; color: #151515; font: 400 15px/1.65 "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { max-width: 1240px; margin: 0 auto; padding: clamp(40px, 7vw, 96px) clamp(16px, 4vw, 48px) 72px; }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 48px); font-weight: 500; letter-spacing: -.03em; line-height: 1.05; }
+    .lead { max-width: 62ch; margin: 18px 0 0; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: clamp(32px, 5vw, 64px); }
+    .card { display: flex; flex-direction: column; min-height: 440px; padding: 28px; color: inherit; text-decoration: none; transition: translate .4s ease; }
+    .card:hover { translate: 0 -4px; }
+    .tag { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; }
+    .logo { margin: auto 0; padding: 40px 0; text-align: center; }
+    .card h2 { margin: 0 0 6px; font: inherit; font-size: 17px; font-weight: 600; }
+    .card p { margin: 0; font-size: 14px; opacity: .78; }
+    .open { margin-top: 20px; font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+    .a { background: #f4f1ec; color: #1b1917; border: 1px solid #dcd5ca; }
+    .a .logo { font: 400 clamp(24px, 2.6vw, 32px)/1.1 "Cormorant Garamond", serif; letter-spacing: .2em; text-transform: uppercase; }
+    .a .logo small { display: block; margin-top: 10px; font-size: 17px; font-style: italic; letter-spacing: .02em; text-transform: none; opacity: .6; }
+    .b { background: #fff; border: 1px solid #e4e4e4; }
+    .b .logo { font-size: 14px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; }
+    .b .logo small { display: block; margin-top: 10px; font-size: 11px; font-weight: 400; letter-spacing: .16em; opacity: .55; }
+    .c { background: #0c0c0c; color: #ebe7df; border: 1px solid #0c0c0c; }
+    .c .logo { font: 400 56px/.92 "Instrument Serif", serif; text-align: left; }
+    .c .logo em { display: block; }
+    .c .logo small { display: block; margin-top: 18px; font: 400 10px/1 "Instrument Sans", sans-serif; letter-spacing: .3em; text-transform: uppercase; opacity: .55; }
+    .notes { margin: clamp(32px, 5vw, 56px) 0 0; padding: 0; max-width: 70ch; color: #555; font-size: 14px; list-style: none; }
+    .notes li { padding: 10px 0; border-top: 1px solid #e6e6e6; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kinga Chudzik — trzy koncepcje strony</h1>
+    <p class="lead">Ten sam poziom minimalizmu, trzy różne charaktery. Każda koncepcja ma trzy podstrony: Work, Śluby i Kontakt. Między koncepcjami przełączysz się pigułką A · B · C w prawym dolnym rogu — zostajesz wtedy na tej samej podstronie, więc łatwo je porównać.</p>
+
+    <div class="grid">
+      <a class="card a" href="a/">
+        <span class="tag">Koncepcja A</span>
+        <div class="logo">Kinga Chudzik<small>Makeup Artist — Kraków</small></div>
+        <h2>Editorial</h2>
+        <p>Ciepły, papierowy odcień i szeryfowy logotyp na środku. Zdjęcia ułożone asymetrycznie, z dużą ilością powietrza — jak rozkładówka magazynu.</p>
+        <span class="open">Otwórz →</span>
+      </a>
+      <a class="card b" href="b/">
+        <span class="tag">Koncepcja B</span>
+        <div class="logo">Kinga Chudzik<small>Makeup Artist</small></div>
+        <h2>Atelier</h2>
+        <p>Czysta biel, jeden bezszeryfowy krój i ścisła siatka z wąskimi odstępami. Najbliżej stron, które podałeś jako wzór; zdjęcia wypełniają cały ekran.</p>
+        <span class="open">Otwórz →</span>
+      </a>
+      <a class="card c" href="c/">
+        <span class="tag">Koncepcja C</span>
+        <div class="logo">Kinga <em>Chudzik</em><small>Makeup Artist — Kraków</small></div>
+        <h2>Noir</h2>
+        <p>Głęboka czerń, stały panel boczny z nazwiskiem i nawigacją. Zdjęcia pojawiają się pojedynczo, na przemian z lewej i prawej — jak kadry filmu.</p>
+        <span class="open">Otwórz →</span>
+      </a>
+    </div>
+
+    <ul class="notes">
+      <li><strong>Zdjęcia są zastępcze</strong> (Unsplash) — nie są pracami Kingi. Docelowo zastąpią je jej zdjęcia.</li>
+      <li><strong>Układ robi się sam.</strong> Strony powstają z jednej uporządkowanej listy zdjęć: poziome kadry dostają pełną szerokość, pionowe są grupowane. Tak samo będzie działać docelowa strona — w panelu ustawia się tylko kolejność.</li>
+      <li><strong>Kliknij dowolne zdjęcie</strong>, żeby zobaczyć podgląd pełnoekranowy (strzałki, klawiatura, gest na telefonie).</li>
+      <li>Teksty są przykładowe, formularz niczego nie wysyła, a wersja angielska powstanie na etapie wdrożenia.</li>
+    </ul>
+  </main>
+</body>
+</html>
